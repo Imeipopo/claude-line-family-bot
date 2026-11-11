@@ -1,0 +1,6 @@
+anthropic>=0.105
+fastapi>=0.136
+uvicorn[standard]>=0.48
+line-bot-sdk>=3.23,<4
+python-dotenv>=1.2
+apscheduler>=3.11,<4

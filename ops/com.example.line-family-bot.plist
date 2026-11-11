@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  macOS 開機自動啟動、掛掉自動重開。
+  1. 把下面三個 /Users/YOU/claude-line-family-bot 換成你的實際路徑
+  2. cp 到 ~/Library/LaunchAgents/
+  3. launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.example.line-family-bot.plist
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.example.line-family-bot</string>
+    <key>WorkingDirectory</key>
+    <string>/Users/YOU/claude-line-family-bot</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/YOU/claude-line-family-bot/venv/bin/python</string>
+        <string>main.py</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>ThrottleInterval</key>
+    <integer>10</integer>
+    <key>StandardOutPath</key>
+    <string>/Users/YOU/claude-line-family-bot/server.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/YOU/claude-line-family-bot/server.log</string>
+</dict>
+</plist>

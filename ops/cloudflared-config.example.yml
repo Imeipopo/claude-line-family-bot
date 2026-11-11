@@ -1,0 +1,9 @@
+# Cloudflare Tunnel：讓 LINE 從外面連到你電腦上的 127.0.0.1:8001，不用開路由器的 port
+# 建立方式見教學第一篇與第五篇；tunnel 名稱與網址換成你自己的
+tunnel: line-family-bot
+credentials-file: /Users/YOU/.cloudflared/<tunnel-id>.json
+
+ingress:
+  - hostname: bot.example.com
+    service: http://127.0.0.1:8001
+  - service: http_status:404
